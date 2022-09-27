@@ -8,13 +8,15 @@ class Battlefield:
         self.robot = Robot("Chip")
         self.dinosaur = Dinosaur("Gronk", random.randint(1, 25))
 
-    # def run_game(self):
-    #     return
+    def run_game(self):
+        self.display_welcome()
+        self.battle_phase()
+        self.display_winner()
 
-    # def display_welcome():
-    #     print("*----------------------------------*")
-    #     print('Welcome to Robots vs Dinosaurs!')
-    #     print("*----------------------------------*")
+    def display_welcome(self):
+        print("\n*----------------------------------*")
+        print("Welcome to Robots vs Dinosaurs!")
+        print("*----------------------------------*\n")
     
     def battle_phase(self):
         turn_1 = random.randint(1,2)
@@ -32,5 +34,8 @@ class Battlefield:
                 print()
                 turn_1 = 1
         
-    # def display_winner(self):
-    #     return
+    def display_winner(self):
+        if self.dinosaur.health <= 0:
+            print(f"Robot {self.robot.name} has won the battle!\n")
+        else:
+            print(f"Dinosaur {self.dinosaur.name} has won the battle!\n")

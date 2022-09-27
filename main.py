@@ -1,9 +1,5 @@
 from battlefield import Battlefield
 
-test = Battlefield()
+game = Battlefield()
 
-
-
-
-
-test.battle_phase()
+game.run_game()
