@@ -8,6 +8,8 @@ class Dinosaur:
     def attack(self, robot):
         self.attack_power = random.randint(1, 25)
         robot.health = robot.health - self.attack_power
-        print(f"{self.name} attacked {robot.name} for {self.attack_power} damage! {robot.name} now has {robot.health} health!")
+        print(f"{self.name} attacked {robot.name} for {self.attack_power} damage!")
         if robot.health <= 0:
-            print(f"{robot.name} was beaten!")
+            print(f"\nRobot {robot.name} has no more health left!\nDinosaur {self.name} has dismantled Robot {robot.name}!")
+        else:
+            print(f"{robot.name} now has {robot.health} health!")

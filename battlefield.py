@@ -18,11 +18,12 @@ class Battlefield:
         print("*----------------------------------*\n")
     
     def battle_phase(self):
+        print(f"A coin toss will determine who get's to go first!\nWith Dino {self.dinosaur.name} choosing heads and Robot {self.robot.name} choosing tails!\n")
         turn_1 = random.randint(1,2)
         if turn_1 == 1:
-           print(f"Robot {self.robot.name} gets to attack first!\n")
+           print(f"The coin toss resulted in tails!\nRobot {self.robot.name} gets to attack first!\n")
         elif turn_1 == 2:
-            print(f"Dino {self.dinosaur.name} gets to attack first!\n")
+            print(f"The coin toss resulted in heads!\nDino {self.dinosaur.name} gets to attack first!\n")
         while self.dinosaur.health >= 0 and self.robot.health >= 0:
             if turn_1 == 1:
                 self.robot.attack(self.dinosaur)
